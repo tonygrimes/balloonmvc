@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Bingo!</title>
+
+		<style type="text/css">
+
+			body{
+				margin: 0px;
+				overflow: hidden;
+				width : 100%;
+			}
+
+			.background {
+				position : 		absolute;
+				display : 		block;
+				width : 		256px;
+				height : 		384px;
+			}
+
+			#back1 {
+				background : 	url(img/parallaxBack.jpg) repeat-y;
+			}
+
+			#back2 {
+				background : 	url(img/parallaxFront.png) transparent repeat-y;
+			}
+
+			#balloonContainer {
+				position : 		absolute;
+				display : 		block;
+				width : 		1024px;
+				height : 		768px;
+			}
+
+		</style>
+		
+		
+	</head>
+	<body>
+
+		<div class="background" id="back1"></div>
+		<div class="background" id="back2"></div>
+		<div id="balloonContainer"></div>
+
+	</body>
+	
+	<script data-main="scripts/Main.js" src="scripts/require.js"></script>
+<!--
+	 <script src="scripts/Harness.js"></script>
+<script src="scripts/ParallaxView.js"></script>
+<script src="scripts/BalloonView.js"></script>
+<script src="scripts/CommsManager.js"></script>
+<script src="scripts/Notifications.js"></script>
+	 <script src="scripts/Main.js"></script>
+-->
+</html>
