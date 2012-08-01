@@ -1,6 +1,6 @@
-requirejs([], function() {
+define([], function() {
     				
-	ParallaxView = function(backLayerId, frontLayerId, notificationCentre)
+	var ParallaxView = function(backLayerId, frontLayerId, notificationCentre)
 	{
 		this.notificationCentre = notificationCentre;
 	
@@ -18,7 +18,9 @@ requirejs([], function() {
 		};	
 		
 		setInterval(this.update, 15);		
-		
+
 	}
+
+	return ParallaxView;
 					
 });

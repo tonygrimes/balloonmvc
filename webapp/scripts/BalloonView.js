@@ -1,27 +1,20 @@
-var GAMESYS = GAMESYS || {};
-GAMESYS.bingo = GAMESYS.bingo || {};
-GAMESYS.bingo.views = GAMESYS.bingo.views || {};
+define(["BallCallNotification"], function(BallCallNotification){
 
-//////////*******BALLOONVIEW OBJECT***********///////////
+	var BalloonView = function(displayObjectid, notificationCentre)
+	{				
+		var me = this;
+		
+		this.balloonPool = [];
+		this.activeBalloons = [];
+		this.balloonSrc = "img/redBalloon.png";
+		
+		this.container = document.getElementById(displayObjectid);
+		this.y = parseInt(this.container.clientHeight) + 200;
+		this.notificationCentre = notificationCentre;
+		this.notificationCentre.addNotificationListener(BallCallNotification.ON_BALL_CALL, this.addBalloon, this);
+	}
 
-GAMESYS.bingo.views.BalloonView = function(displayObjectid, notificationCentre)
-{	
-	//dependencies
-	var BallCallNotification = GAMESYS.notifications.BallCallNotification;
-	
-	var me = this;
-	
-	this.balloonPool = [];
-	this.activeBalloons = [];
-	this.balloonSrc = "img/redBalloon.png";
-	
-	this.container = document.getElementById(displayObjectid);
-	this.y = parseInt(this.container.clientHeight) + 200;
-	this.notificationCentre = notificationCentre;
-	this.notificationCentre.addNotificationListener(BallCallNotification.ON_BALL_CALL, this.addBalloon, this);
-}
-
-GAMESYS.bingo.views.BalloonView.prototype.addBalloon = function(notification){
+	BalloonView.prototype.addBalloon = function(notification){
 
 		var newBalloon, i, x, len;
 		
@@ -45,4 +38,8 @@ GAMESYS.bingo.views.BalloonView.prototype.addBalloon = function(notification){
 		this.activeBalloons.push(newBalloon); 	
 		
 		newBalloon.activate(notification.ballCall, x, this.y);
-};
+	};
+
+	return BalloonView;
+
+})
