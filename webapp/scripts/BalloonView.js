@@ -1,4 +1,4 @@
-define(["BallCallNotification"], function(BallCallNotification){
+define(["BallCallNotification", "Balloon"], function(BallCallNotification, Balloon){
 
 	var BalloonView = function(displayObjectid, notificationCentre)
 	{				
@@ -32,7 +32,7 @@ define(["BallCallNotification"], function(BallCallNotification){
 		if(this.balloonPool.length>0){
 			newBalloon = this.balloonPool.shift();
 		}else{
-			newBalloon = new GAMESYS.bingo.views.Balloon(this.balloonSrc); //creates a div with an background image
+			newBalloon = new Balloon(this.balloonSrc); //creates a div with an background image
 			this.container.appendChild(newBalloon.displayObject);
 		}
 		this.activeBalloons.push(newBalloon); 	

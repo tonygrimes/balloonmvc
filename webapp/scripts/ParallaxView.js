@@ -1,4 +1,4 @@
-define([], function() {
+define(function() {
     				
 	var ParallaxView = function(backLayerId, frontLayerId, notificationCentre)
 	{

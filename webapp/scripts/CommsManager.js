@@ -1,4 +1,4 @@
-define(["Harness"], function(Harness, BallCallNotification, GameStartNotification, BallCallNotification, GameEndNotification){
+define(["Harness", "BallCallNotification", "GameStartNotification", "BallCallNotification", "GameEndNotification"], function(Harness, BallCallNotification, GameStartNotification, BallCallNotification, GameEndNotification){
 
 	var CommsManager = function (config, notificationCentre) {
 		this.harness;
@@ -51,8 +51,7 @@ define(["Harness"], function(Harness, BallCallNotification, GameStartNotificatio
 	};
 	
 	CommsManager.prototype.onMessage = function (m) {
-		console.log(m);
-		/*
+		
 		switch(m.type){
 			case "message":
 				var ballNumber = m.data.replace(/[a-z\[\]-]/gi, "");
@@ -69,7 +68,7 @@ define(["Harness"], function(Harness, BallCallNotification, GameStartNotificatio
 				this.notificationCentre.sendNotification(new GameEndNotification(m));
 				break;
 		}
-		*/
+		
 	};
 
 	return CommsManager;

@@ -5,7 +5,7 @@ define(function(){
 			this.evt = document.createEvent('Event');  
 			this.evt.initEvent(this.constructor.ON_GAME_END, true, true);
 		};
-		GameStartNotification.ON_GAME_END = "onGameEnd";
+		GameEndNotification.ON_GAME_END = "onGameEnd";
 
 		return GameEndNotification;
 
